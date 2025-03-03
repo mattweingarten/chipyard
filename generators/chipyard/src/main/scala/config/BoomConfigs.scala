@@ -6,6 +6,21 @@ import org.chipsalliance.cde.config.{Config}
 // BOOM Configs
 // ---------------------
 
+class MegaBoomScalarCountersConfig extends Config(
+  new boom.common.WithNMegaBooms(1,                             // small boom config
+    boom.common.SuperscalarCSRMode.SCALAR_COUNTERS) ++
+  new chipyard.config.AbstractConfig)
+
+class MegaBoomAddWiresConfig extends Config(
+  new boom.common.WithNMegaBooms(1,                             // small boom config
+    boom.common.SuperscalarCSRMode.ADD_WIRES) ++
+  new chipyard.config.AbstractConfig)
+
+class MegaBoomDistributedCountersConfig extends Config(
+  new boom.common.WithNMegaBooms(1,                             // small boom config
+    boom.common.SuperscalarCSRMode.DISTRIBUTED_COUNTERS) ++
+  new chipyard.config.AbstractConfig)
+
 class SmallBoomConfig extends Config(
   new boom.common.WithNSmallBooms(1) ++                          // small boom config
   new chipyard.config.AbstractConfig)
