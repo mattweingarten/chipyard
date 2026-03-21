@@ -154,3 +154,6 @@
 [submodule "generators/vexiiriscv"]
 	path = generators/vexiiriscv
 	url = https://github.com/ucb-bar/vexiiriscv-tile.git
+[submodule "generators/coralnpu"]
+	path = generators/coralnpu
+	url = https://github.com/mattweingarten/coralnpu.git
