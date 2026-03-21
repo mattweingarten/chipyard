@@ -157,3 +157,6 @@
 [submodule "generators/tacit"]
 	path = generators/tacit
 	url = https://github.com/ucb-bar/tacit.git
+[submodule "generators/coralnpu"]
+	path = generators/coralnpu
+	url = https://github.com/mattweingarten/coralnpu.git
