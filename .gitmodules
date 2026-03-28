@@ -157,3 +157,7 @@
 [submodule "generators/tacit"]
 	path = generators/tacit
 	url = https://github.com/ucb-bar/tacit.git
+[submodule "generators/coralwrapper"]
+	path = generators/coralwrapper
+	url = https://github.com/mattweingarten/nanoPUwrapper.git
+	branch = cursor/nano-pu-chipyard-generator-a33b
