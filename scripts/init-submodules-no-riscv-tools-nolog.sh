@@ -76,7 +76,7 @@ cd "$RDIR"
             generators/gemmini \
             generators/rocket-chip \
             generators/compress-acc \
-            generators/coralnpu \
+            generators/coralwrapper \
             generators/vexiiriscv \
             sims/firesim \
             software/nvdla-workload \
@@ -133,7 +133,7 @@ cd "$RDIR"
     git submodule update --init generators/compress-acc
 
     # Non-recursive clone
-    git submodule update --init generators/coralnpu
+    git submodule update --init generators/coralwrapper
 
     # Non-recursive clone
     git submodule update --init generators/vexiiriscv

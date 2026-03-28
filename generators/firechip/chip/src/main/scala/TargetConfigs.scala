@@ -315,11 +315,6 @@ class FireSimCVA6Config extends Config(
   new WithFireSimConfigTweaks ++
   new chipyard.CVA6Config)
 
-class FireSimCoralNPUConfig extends Config(
-  new WithDefaultFireSimBridges ++
-  new WithFireSimConfigTweaks ++
-  new chipyard.CoralNPUConfig)
-
 //**********************************************************************************
 // System with 16 LargeBOOMs that can be simulated with Golden Gate optimizations
 // - Requires MTModels and MCRams mixins as prefixes to the platform config

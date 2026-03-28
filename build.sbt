@@ -156,7 +156,7 @@ lazy val testchipip = (project in file("generators/testchipip"))
 lazy val chipyard = (project in file("generators/chipyard"))
   .dependsOn(testchipip, rocketchip, boom, rocketchip_blocks, rocketchip_inclusive_cache,
     dsptools, rocket_dsp_utils,
-    gemmini, icenet, tracegen, cva6, coralnpu, nvdla, sodor, ibex, fft_generator,
+    gemmini, icenet, tracegen, cva6, coralwrapper, nvdla, sodor, ibex, fft_generator,
     constellation, mempress, barf, shuttle, caliptra_aes, rerocc,
     compressacc, saturn, ara, firrtl2_bridge, vexiiriscv, tacit)
   .settings(libraryDependencies ++= rocketLibDeps.value)
@@ -223,22 +223,10 @@ lazy val cva6 = (project in file("generators/cva6"))
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
-lazy val coralnpu = (project in file("generators/coralnpu/hdl/chisel"))
+lazy val coralwrapper = (project in file("generators/coralwrapper"))
   .dependsOn(rocketchip)
   .settings(libraryDependencies ++= rocketLibDeps.value)
-  .settings(chiselSettings)
   .settings(commonSettings)
-  .settings(
-    Compile / unmanagedSourceDirectories += baseDirectory.value / "src",
-    Compile / unmanagedResourceDirectories ++= Seq(
-      file("generators/coralnpu"),
-      file("generators/coralnpu/hdl/verilog")
-    ),
-    Compile / sources := (Compile / sources).value.filterNot { src =>
-      val name = src.getName
-      name.endsWith("Test.scala") || name.endsWith("Testbench.scala") || name.endsWith("SmokeTest.scala")
-    }
-  )
 
 lazy val ara = (project in file("generators/ara"))
   .dependsOn(rocketchip, shuttle)
